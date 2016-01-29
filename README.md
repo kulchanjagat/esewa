@@ -2,38 +2,42 @@
 This package makes the task of verifying eSewa payments easier.
 
 ### Installation
-Add the following to your `composer.json`
+```
+composer require nikhil-pandey/esewa
+```
+
+Or add the following to your `composer.json`
 
 ```json
-    "nikhil-pandey/esewa": "dev-master"
+"nikhil-pandey/esewa": "^1.0"
 ```
 
 #### Service Provider
 ```php
-    'providers' => [
-        NikhilPandey\Esewa\EsewaServiceProvider::class,
-    ]
+'providers' => [
+    NikhilPandey\Esewa\EsewaServiceProvider::class,
+]
 ```
 #### Facade
 ```php
-    'facades'   => [
-        'Esewa'     => NikhilPandey\Esewa\Facades\Esewa::class,
-    ]
+'facades'   => [
+    'Esewa'     => NikhilPandey\Esewa\Facades\Esewa::class,
+]
 ```
 #### Config File
 You could easily deploy the config files by running
 ```php
-    php artisan vendor:publish
+php artisan vendor:publish
 ```
 
 you should see the following 
 ```php
-    return [
-        'debug' => true,
-        'url' => 'https://esewa.com.np/epay/main',
-        'debug_url' => 'https://dev.esewa.com.np/epay/main',
-        'merchant_code' => '',
-    ];
+return [
+    'debug' => true,
+    'url' => 'https://esewa.com.np/epay/main',
+    'debug_url' => 'https://dev.esewa.com.np/epay/main',
+    'merchant_code' => '',
+];
 ```
 when `debug` is `true`, it verifies the data with test server of eSewa
 
