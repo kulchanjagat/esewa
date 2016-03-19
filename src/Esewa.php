@@ -52,13 +52,14 @@ class Esewa
 
     /**
      * Creates the new static instance with given values and returns it.
-     * 
-     * @param  array  $fields
+     *
+     * @param array $fields
+     *
      * @return static
      */
     public static function with($fields = [])
     {
-        $esewa = new static;
+        $esewa = new static();
         $esewa->order_id = array_get($fields, array_has($fields, 'id') ? 'id' : 'order_id');
         $esewa->reference_id = array_get($fields, 'reference_id');
         $esewa->amount = array_get($fields, 'amount');
@@ -75,9 +76,9 @@ class Esewa
     {
         // The fields to be sent
         $post_fields = http_build_query([
-            'pid' => $this->order_id,
-            'rid' => $this->reference_id,
-            'scd' => $this->merchant_code,
+            'pid'    => $this->order_id,
+            'rid'    => $this->reference_id,
+            'scd'    => $this->merchant_code,
             'amount' => $this->amount,
         ]);
 

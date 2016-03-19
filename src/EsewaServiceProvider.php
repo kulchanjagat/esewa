@@ -32,7 +32,7 @@ class EsewaServiceProvider extends ServiceProvider
 
         // Bind to the IoC Container
         $this->app->singleton('esewa', function ($app) {
-            return new Esewa;
+            return new Esewa();
         });
     }
 }
